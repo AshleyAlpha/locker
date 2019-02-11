@@ -1,11 +1,13 @@
-class Users:
-    def __init__(self,email, username, password):
+class Credentials: 
+    Credentials_list
+     def __init__(self, app_name, password):
 
         '''
         __init__ method that helps us define properties for our objects.
 
         Args:
-            email: New user email.
-            username : New user username.
-            password: New user password.
+            app_name: New user application  name.
+            password: New user application's password.
         '''
+        self.app_name = app_name
+        self.password = password
