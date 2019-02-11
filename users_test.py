@@ -30,7 +30,7 @@ class TestUsers(unittest.TestCase):
         test_save_user test case to test if the user object is saved into
          the users list
         '''
-        self.new_user.save_user() # saving the new contact
+        self.new_user.save_user() # saving the new users
         self.assertEqual(len(Users.users_list),1)
     
     def test_save_multiple_user(self):
@@ -39,7 +39,7 @@ class TestUsers(unittest.TestCase):
             objects to our users_list
             '''
             self.new_user.save_user()
-            test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new contact
+            test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
             test_user.save_user()
             self.assertEqual(len(Users.users_list),2)
 #setup and class creation up here
@@ -56,7 +56,7 @@ class TestUsers(unittest.TestCase):
             objects to our users_list
             '''
             self.new_user.save_user()
-            test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new contact
+            test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
             test_user.save_user()
             self.assertEqual(len(Users.users_list),2)
 
