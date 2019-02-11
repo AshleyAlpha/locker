@@ -68,7 +68,7 @@ class TestCredentials(unittest.TestCase):
             test_credential = Credentials("facebook","miahmamie") # new credential
             test_credential.save_credential()
 
-            self.new_credential.delete_credential()# Deleting a credential object
+            self.new_credential.delete_credential()# Deleting a credential  object
             self.assertEqual(len(Credentials.credentials_list),1)
 
 
