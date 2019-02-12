@@ -1,3 +1,4 @@
+# import pyperclip
 class Users:
     users_list = []
     def __init__(self,email, username, password):
@@ -40,4 +41,16 @@ class Users:
                     return True
 
         return False
+
+    @classmethod
+    def display_user(cls):
+        '''
+        method that returns the users list
+        '''
+        return cls.users_list
+
+    # @classmethod
+    # def copy_email(cls,username):
+    #     user_found = Users.find_by_username(username)
+    #     pyperclip.copy(user_found.email)
             
