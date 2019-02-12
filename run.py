@@ -6,3 +6,9 @@ def create_user(emal,username,password):
     '''
     new_user = Users(emal,username,password)
     return new_user
+
+def save_user(user):
+    '''
+    Function to save new user
+    '''
+    user.save_user()
