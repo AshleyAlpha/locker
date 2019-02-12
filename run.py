@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
-from user import Users
-from credential import Credentials
+from users import Users
+from credentials import Credentials
 def create_user(email,username,password):
     '''
     Function to create a new user
@@ -11,8 +11,8 @@ def create_credential(app_name,password):
     '''
     Function to create a new credential
     '''
-    new_user = Users(emal,username,password)
-    return new_user
+    new_credential = Credentials(app_name,password)
+    return new_credential
 
 def save_user(user):
     '''
@@ -48,7 +48,7 @@ def find_credential(app_name):
     '''
     Function that finds a credential by app_name and returns the credential
     '''
-    return credential.find_by_app_nameapp_name
+    return Credentials.find_by_app_name(app_name)
 
 def check_existing_user(username):
     '''
@@ -73,3 +73,84 @@ def display_credential():
     Function that returns all the saved credentials
     '''
     return Credentials.display_credential()
+
+def main():
+    print("Hello Welcome to your users list. What is your name?")
+    user_name = input()
+
+    print(f"Hello {user_name}. what would you like to do?")
+    print('\n')
+
+    print("New user")
+    print("-"*10)
+
+    print ("email ....")
+    email = input()
+
+    print("username ...")
+    username = input()
+
+    print("password ...")
+    password = input()
+
+    while True:
+                    print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, ex -exit the credentials list ")
+
+                    short_code = input().lower()
+
+                    if short_code == 'cc':
+                            print("New Credential")
+                            print("-"*10)
+
+                            print ("app_name ....")
+                            app_name = input()
+
+                            print("password ...")
+                            password = input()
+
+                        
+
+
+                            save_credential(create_credential(app_name,password)) # create and save new credential
+                            print ('\n')
+                            print(f"New Credential {app_name} {password} created!!")
+                            print ('\n')
+
+                    elif short_code == 'dc':
+
+                            if display_credential():
+                                    print("Here is a list of all your credentials")
+                                    print('\n')
+
+                                    for credential in display_credential():
+                                            print(f"{credential.app_name} {credential.password} .....")
+
+                                    print('\n')
+                            else:
+                                    print('\n')
+                                    print("You dont seem to have any credential saved yet!")
+                                    print('\n')
+
+                    elif short_code == 'fc':
+
+                            print("Enter the appliacation name you want to search for")
+
+                            search_application = input()
+                            if check_existing_credential(search_application):
+                                    search_credential = find_credential(search_application)
+                                    print(f"{search_credential.password} {search_credential.app_name}")
+                                    print('-' * 20)
+
+                                    print(f"app_name.......{search_credential.app_name}")
+                                    print(f"password.......{search_credential.password}")
+                            else:
+                                    print("That credential does not exist")
+
+                    elif short_code == "ex":
+                            print("Bye .......")
+                            break
+                    else:
+                            print("I really didn't get that. Please use the short codes")
+
+if __name__ == '__main__':
+    main()
