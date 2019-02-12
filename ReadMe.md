@@ -16,6 +16,33 @@ this project is called password locker. is a terminal run python application tha
 * git clone https://github.com/AshleyAlpha/locker.git then,
 * cd locker
 
+##Technologies Used
+
+* Terminal
+* Github
+* Python3.6
+
+##BDD(Behavior Driven Development)
+* The program should allow the user to create an account with a username and a password
+* The program should allow the user to login their account using the right credentials
+* The program should allow the user to store the existing account credentials
+* The program should allow the user to create new account credentials
+* The program should be able to generate passwords for the user
+* The program should allow the user to generate their own passwords
+* The program should allow the user to display account credentials and passwords
+* The program should allow the user to delete account credentials that are no longer needed.
+
+##Known Bugs
+There are no known bugs for now.
+
+##Acknowledgement
+* Moringa school
+* Wecode Moringa
+
+##Contacts
+Tel: +250782387280 you can call and whatsapp me on that number. Email address: mashleyalpha@gmail.com
+##License
+MT License. copyright (c) 2019 Alpha Ashley MBABAZI.
 
 
 
