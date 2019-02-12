@@ -93,6 +93,24 @@ def main():
     print("password ...")
     password = input()
 
+    print("now let procceed to login to our account")
+    print('\n')
+
+    print("enter your username (the username must be the same as the first username you entered previously ):")
+    print('\n')
+    print("enter username")
+    login_name=input()
+
+    print("enter password")
+    passw=input()
+    
+    if password==passw and username==login_name:
+        print("successfully logged in")
+        print('\n')
+    else:
+        print(f"password: {passw} or name: {login_name} incorrect. Next time , Please enter password correctly.")  
+        sys.exit()
+
     while True:
                     print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, del -delete a credential, ex -exit the credentials list ")
 
@@ -107,34 +125,14 @@ def main():
 
                             print("password ...")
                             password = input()
-
-                    # print("now let procceed to login to our account")
-                    # print('\n')
-
-                    # print("enter your username (the username must be the same as the first username you entered previously ):")
-                    # print('\n')
-
-                    # print("enter username")
-                    # login_name=input()
-
-                    # print("enter password")
-                    # passw=input()
-    
-                    # if fi_password==passw and user_name==login_name:
-                    #     print("successfully logged in")
-                    #     print('\n')
-                    # else:
-                    #     print(f"password: {passw} or name: {login_name} incorrect. Next time , Please enter password correctly.")  
-                    #     sys.exit()       
-
-
                             save_credential(create_credential(app_name,password)) # create and save new credential
                             print ('\n')
                             print(f"New Credential {app_name} {password} created!!")
                             print ('\n')
 
+                            
+                       
                     elif short_code == 'dc':
-
                             if display_credential():
                                     print("Here is a list of all your credentials")
                                     print('\n')
