@@ -71,6 +71,19 @@ class TestCredentials(unittest.TestCase):
             self.new_credential.delete_credential()# Deleting a credential  object
             self.assertEqual(len(Credentials.credentials_list),1)
 
+    def test_find_credential_by_app_name(self):
+        '''
+        test to check if we can find a credential by app_name and display information
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credentials("facebook","miahmamie") # new credential
+        test_credential.save_credential()
+
+        found_credential = Credentials.find_by_app_name("facebook")
+
+        self.assertEqual(found_credential.app_name,test_credential.app_name)
+
 
 if __name__ == '__main__':
     unittest.main()

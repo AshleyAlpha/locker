@@ -12,10 +12,10 @@ class Users:
         save_user method saves user objects into users_list
         '''
         Users.users_list.append(self)
- @classmethod
+    @classmethod
     def find_by_username(cls,username):
         '''
-        Method that takes in a number and returns a user that matches that number.
+        Method that takes in a username and returns a user that matches that username.
 
         Args:
             username: username to search for
@@ -25,4 +25,4 @@ class Users:
 
         for user in cls.users_list:
             if user.username == username:
-                return username
+                return user

@@ -69,9 +69,22 @@ class TestUsers(unittest.TestCase):
         test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
         test_user.save_user()
 
-        found_user = Users.find_by_email("ashleyalpha")
+        found_user = Users.find_by_username("ashleyalpha")
 
         self.assertEqual(found_user.email,test_user.email)
+    
+    def test_user_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the user.
+        '''
+
+        self.new_user.save_user()
+        test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
+        test_user.save_user()
+
+        user_exists = Users.user_exist("ashleyalpha")
+
+        self.assertTrue(user_exists)
 
 
 if __name__ == '__main__':
